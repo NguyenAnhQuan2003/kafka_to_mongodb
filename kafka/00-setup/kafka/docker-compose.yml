@@ -120,7 +120,7 @@ services:
           connections:
             kafka-server:
               properties:
-                bootstrap.servers: "kafka-0:9092,kafka-1:9092,kafka-2:9092"
+                bootstrap.servers: 'localhost:9094,localhost:9194,localhost:9294'
                 security.protocol: SASL_PLAINTEXT
                 sasl.mechanism: PLAIN
                 sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="kafka" password="UnigapKafka@2024";
