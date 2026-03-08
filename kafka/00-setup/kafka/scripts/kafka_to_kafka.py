@@ -7,7 +7,7 @@ source_conf = {
     'sasl.mechanism': 'PLAIN',
     'sasl.username': 'kafka',
     'sasl.password': 'UnigapKafka@2024',
-    'group.id': 'bridge-group',
+    'group.id': 'quan-product-view-sync-group',
     'auto.offset.reset': 'earliest'
 }
 

@@ -25,7 +25,9 @@ try:
         if msg is None: continue
 
         data = json.loads(msg.value().decode('utf-8'))
-        collection.insert_one(data)
+        # collection.insert_one(data)
+        query = {'_id': data['_id']}
+        collection.replace_one(query, data, upsert=True)
         print("Inserted 1 document to MongoDB")
 finally:
     consumer.close()
