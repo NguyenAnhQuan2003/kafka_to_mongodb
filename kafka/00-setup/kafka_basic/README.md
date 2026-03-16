@@ -20,7 +20,7 @@ docker compose up -d
 
 ```shell
 docker compose ps
-docker compose logs kafka-0 -f -n 100
+docker compose logs kafka_basic-0 -f -n 100
 ```
 
 **Testing**
@@ -28,19 +28,19 @@ docker compose logs kafka-0 -f -n 100
 Run inside kafka's containers
 
 ```shell
-docker exec -ti kafka-0 bash
+docker exec -ti kafka_basic-0 bash
 ```
 
 Producer
 
 ```shell
-kafka-console-producer --producer.config /etc/kafka/producer.properties --bootstrap-server kafka-0:29092,kafka-1:29092,kafka-2:29092 --topic test
+kafka_basic-console-producer --producer.config /etc/kafka_basic/producer.properties --bootstrap-server kafka_basic-0:29092,kafka_basic-1:29092,kafka_basic-2:29092 --topic test
 ```
 
 Consumer
 
 ```shell
-kafka-console-consumer --consumer.config /etc/kafka/consumer.properties --bootstrap-server kafka-0:29092,kafka-1:29092,kafka-2:29092 --topic test --from-beginning
+kafka_basic-console-consumer --consumer.config /etc/kafka_basic/consumer.properties --bootstrap-server kafka_basic-0:29092,kafka_basic-1:29092,kafka_basic-2:29092 --topic test --from-beginning
 ```
 
 ## 3. Monitor
